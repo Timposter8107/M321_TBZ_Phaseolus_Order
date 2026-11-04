@@ -32,6 +32,10 @@ spec:
               value: phaseolus
             - name: Keycloak__Authority
               value: http://keycloak.infra.svc.cluster.local/realms/phaseolus
+            - name: OTEL_SERVICE_NAME
+              value: orderbeans
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: http://tempo.infra.svc.cluster.local:4317
           livenessProbe:
             httpGet:
               path: /healthz/live
